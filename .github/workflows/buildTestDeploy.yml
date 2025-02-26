@@ -1,0 +1,10 @@
+name: buildTestDeploy
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - run: "g++ ./quadratic_solver.cpp -o quadratic_solver.exe"
+      
