@@ -14,3 +14,13 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v3
       - run: "bash quadratic.sh"
+  Deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - run: "g++ ./quadratic_solver.cpp -o quadratic_solver.exe"
+      - run: "chmod ugo+x quadratic_solver.exe"
+      - run: "./quadratic_solver.exe 1 2 1"
+      
