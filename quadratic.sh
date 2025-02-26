@@ -27,7 +27,7 @@ do
 	if [[ $result != ${output[i]} ]]
 	then
 		((errors++))
-		echo "error: Result $result != Expected output ${output[i]}"
+		>&2 echo "error: Result $result != Expected output ${output[i]}"
 	fi
 done
 
