@@ -7,4 +7,10 @@ jobs:
       - name: checkout repo
         uses: actions/checkout@v3
       - run: "g++ ./quadratic_solver.cpp -o quadratic_solver.exe"
-      
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repo
+        uses: actions/checkout@v3
+      - run: "bash quadratic.sh"
